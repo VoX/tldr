@@ -16,14 +16,38 @@ a{
 
 .msgContainer{
 	overflow: auto;
-	margin-bottom: 3px;
+	margin-bottom: 0.8em;
 }
 
-.msg__user{
-	background-color: #54A0FF;
-	color: #fff;
+.msgContainer__user{
+	text-align: right;
+
+	.msg{
+		background-color: #54A0FF;
+		color: #fff;
+	}
+
+	.date{
+		float: none;
+	}
 }
 
 .messages{
 	list-style-type: none;
+}
+
+.user {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.8em;
+    color: #ccc;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2em;
+}
+
+.date {
+    margin: 3px 0;
+    font-size: 0.8em;
+    color: #ccc;
+
 }
