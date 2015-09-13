@@ -13,20 +13,29 @@ var MessageList = React.createClass({
 });
 
 var ChatTitle = React.createClass({
-  render: function() {
-      this.props.titleAction = 'edit';
-      return <div id="titleContainer"><h3 id="title">{this.props.title}</h3><a href="#" onClick={this.editTitle}>{this.props.titleAction}</a></div>;
+  getInitialState: function() {
+    return {editing: false,
+            channel: "public"};
+  },
+  render: function() {  
+    var content;
+    console.log("wtf");
+      if(this.state.editing){
+        content = <input value={this.state.channel} onChange={this.handleChange}></input>;
+      }
+      else{
+        content = <h3 id="channel">{this.state.channel}</h3>
+      }
+      return <div id="titleContainer">{content}<a href="#" onClick={this.state.editing ? this.updateTitle : this.editTitle}>{this.state.editing ? "Save" : "Edit"}</a></div>;
+  },
+  updateTitle: function(event){
+    this.setState({editing:false});
+  },
+    handleChange: function(event){
+    this.setState({channel: event.target.value.substr(0, 140)});
   },
   editTitle: function(){
-    this.props.titleAction = 'save';
-    var title = document.getElementById('title');
-    var titleContainer = document.getElementById('titleContainer');
-
-    var titleInput = document.createElement('input');
-    titleInput.setAttribute('value', this.props.title);
-
-    title.style.display = "none";
-    titleContainer.appendChild(titleInput);
+    this.setState({editing:true});
   }
 
 });
