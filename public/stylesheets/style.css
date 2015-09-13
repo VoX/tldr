@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+.msg {
+  border-radius: 20px;
+  background-color: #DDD;
+  padding: 7px 15px;
+  display: inline-block; }
+
+.msgContainer {
+  overflow: auto;
+  margin-bottom: 3px; }
+
+.msg__user {
+  background-color: #54A0FF;
+  color: #fff; }
+
+.messages {
+  list-style-type: none; }
+
+/*# sourceMappingURL=style.css.map */
